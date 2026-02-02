@@ -8,35 +8,35 @@
 
 Dự án được chia làm hai giai đoạn chính:
 
-Phân loại Nhị phân (Binary Classification): Phân loại nốt ruồi thành 2 nhóm Lành tính (Benign) và Ác tính (Malignant). Mục tiêu tối ưu hóa chỉ số Recall để không bỏ sót bệnh nhân.
+- Phân loại Nhị phân (Binary Classification): Phân loại nốt ruồi thành 2 nhóm Lành tính (Benign) và Ác tính (Malignant). Mục tiêu tối ưu hóa chỉ số Recall để không bỏ sót bệnh nhân.
 
-Phân loại Đa lớp (Multi-class Classification): Chẩn đoán chi tiết 7 loại bệnh lý da liễu có trong tập dữ liệu.
+- Phân loại Đa lớp (Multi-class Classification): Chẩn đoán chi tiết 7 loại bệnh lý da liễu có trong tập dữ liệu.
 
 📊 Bộ dữ liệu (Dataset)
 
-Nguồn: HAM10000 (Human Against Machine).
+- Nguồn: HAM10000 (Human Against Machine).
 
-Số lượng: 10,015 ảnh da liễu.
+- Số lượng: 10,015 ảnh da liễu.
 
-Các lớp bệnh lý:
+- Các lớp bệnh lý:
 
-akiec: Actinic keratoses.
+- akiec: Actinic keratoses.
 
-bcc: Basal cell carcinoma.
+- bcc: Basal cell carcinoma.
 
-bkl: Benign keratosis-like lesions.
+- bkl: Benign keratosis-like lesions.
 
-df: Dermatofibroma.mel: Melanoma.
+- df: Dermatofibroma.mel: Melanoma.
 
-nv: Melanocytic nevi.
+- nv: Melanocytic nevi.
 
-vasc: Vascular lesions.
+- vasc: Vascular lesions.
 
 🛠 Quy trình thực hiện (Pipeline)
 
-1. Tiền xử lý dữ liệu
+- 1. Tiền xử lý dữ liệu
 
-Resize ảnh về kích thước chuẩn (64x64).
+  + Resize ảnh về kích thước chuẩn (64x64).
 
 Chuyển đổi ảnh sang không gian màu xám cho HOG và giữ nguyên kênh màu RGB cho đặc trưng màu sắc.
 
