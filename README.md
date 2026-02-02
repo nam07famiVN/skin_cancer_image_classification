@@ -34,70 +34,70 @@ Dự án được chia làm hai giai đoạn chính:
 
 🛠 Quy trình thực hiện (Pipeline)
 
-- 1. Tiền xử lý dữ liệu
+  1. Tiền xử lý dữ liệu
 
-  + Resize ảnh về kích thước chuẩn (64x64).
+  - Resize ảnh về kích thước chuẩn (64x64).
 
-Chuyển đổi ảnh sang không gian màu xám cho HOG và giữ nguyên kênh màu RGB cho đặc trưng màu sắc.
+  - Chuyển đổi ảnh sang không gian màu xám cho HOG và giữ nguyên kênh màu RGB cho đặc trưng màu sắc.
 
-Sử dụng SMOTE kết hợp RandomUnderSampler để giải quyết vấn đề mất cân bằng dữ liệu nghiêm trọng giữa các lớp.
+  - Sử dụng SMOTE kết hợp RandomUnderSampler để giải quyết vấn đề mất cân bằng dữ liệu nghiêm trọng giữa các lớp.
 
-2. Trích xuất đặc trưng (Feature Extraction)
+  2. Trích xuất đặc trưng (Feature Extraction)
 
-Hệ thống sử dụng vector đặc trưng kết hợp:
+  - Hệ thống sử dụng vector đặc trưng kết hợp:
 
-HOG Features: Trích xuất thông tin về hình dạng và cấu trúc biên của nốt ruồi.
+  - HOG Features: Trích xuất thông tin về hình dạng và cấu trúc biên của nốt ruồi.
 
-Color Features: Tính toán giá trị Trung bình (Mean) và Độ lệch chuẩn (Std) của các kênh màu nhằm nhận diện sắc tố đặc trưng của ung thư.
+  - Color Features: Tính toán giá trị Trung bình (Mean) và Độ lệch chuẩn (Std) của các kênh màu nhằm nhận diện sắc tố đặc trưng của ung thư.
 
-3. Huấn luyện mô hình (Model Training)Thuật toán:
+  3. Huấn luyện mô hình (Model Training)Thuật toán:
 
-SVM với Kernel RBF.
+  - SVM với Kernel RBF.
 
-Tối ưu hóa: GridSearchCV để tìm bộ thông số C và gamma tốt nhất.
+  - Tối ưu hóa: GridSearchCV để tìm bộ thông số C và gamma tốt nhất.
 
-Chiến lược đa lớp: One-vs-Rest (OvR).
+  - Chiến lược đa lớp: One-vs-Rest (OvR).
 
-Scoring: Sử dụng f1_macro và Recall để đảm bảo tính khách quan giữa các lớp.
+  - Scoring: Sử dụng f1_macro và Recall để đảm bảo tính khách quan giữa các lớp.
 
 📈 Kết quả đạt được
 
-Phân loại Nhị phân (Sàng lọc)
+- Phân loại Nhị phân (Sàng lọc)
 
-Recall (Ác tính): ~92% (Phát hiện hầu hết các ca nguy hiểm).
+- Recall (Ác tính): ~92% (Phát hiện hầu hết các ca nguy hiểm).
 
-Accuracy: ~62% (Đã đánh đổi độ chính xác tổng thể để ưu tiên an toàn bệnh nhân).
+- Accuracy: ~62% (Đã đánh đổi độ chính xác tổng thể để ưu tiên an toàn bệnh nhân).
 
-Phân loại Đa lớp (7 lớp)
+- Phân loại Đa lớp (7 lớp)
 
-Mô hình phân biệt tốt các lớp có đặc trưng mạnh như vasc và nv.
+- Mô hình phân biệt tốt các lớp có đặc trưng mạnh như vasc và nv.
 
-Chỉ số F1-macro ổn định sau khi cân bằng dữ liệu bằng SMOTE.
+- Chỉ số F1-macro ổn định sau khi cân bằng dữ liệu bằng SMOTE.
 
 🚀 Hướng dẫn cài đặt & Chạy
 
-Yêu cầu hệ thống
+- Yêu cầu hệ thống
 
-pip install numpy pandas scikit-learn scikit-image opencv-python matplotlib seaborn imbalanced-learn
+- pip install numpy pandas scikit-learn scikit-image opencv-python matplotlib seaborn imbalanced-learn
 
-Chạy dự án
+- Chạy dự án
 
-Clone dự án: git clone https://github.com/your-username/skin-cancer-svm.git
+- Clone dự án: git clone https://github.com/your-username/skin-cancer-svm.git
 
-Mở file notebook trên Google Colab.
+- Mở file notebook trên Google Colab.
 
-Thay đổi đường dẫn dataset và chạy toàn bộ các cell.
+- Thay đổi đường dẫn dataset và chạy toàn bộ các cell.
 
-Sử dụng file skin_cancer_svm_model.pkl để dự đoán ảnh mới.
+- Sử dụng file skin_cancer_svm_model.pkl để dự đoán ảnh mới.
 
-🖼 Minh họa kết quảConfusion Matrix:
+🖼 Minh họa kết quả
 
-Hiển thị chi tiết các ca đoán đúng/sai cho 7 lớp.
+- Confusion Matrix: Hiển thị chi tiết các ca đoán đúng/sai cho 7 lớp.
 
-ROC Curve: AUC đạt mức ấn tượng cho các lớp bệnh lý ác tính.
+- ROC Curve: AUC đạt mức ấn tượng cho các lớp bệnh lý ác tính.
 
 ⚖️ Giấy phép & Tuyên bố miễn trừ
 
-Dự án được xây dựng cho mục đích học thuật và nghiên cứu.
+- Dự án được xây dựng cho mục đích học thuật và nghiên cứu.
 
-Lưu ý: Kết quả từ mô hình chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán chuyên môn của bác sĩ da liễu.
+- Lưu ý: Kết quả từ mô hình chỉ mang tính chất tham khảo, không thay thế cho chẩn đoán chuyên môn của bác sĩ da liễu.
