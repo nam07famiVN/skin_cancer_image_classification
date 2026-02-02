@@ -82,8 +82,7 @@ Dự án được chia làm hai giai đoạn chính:
 
 - Chạy dự án
 
-- Clone dự án: git clone https://github.com/your-username/skin-cancer-svm.git
-
+- Clone dự án: git clone 
 - Mở file notebook trên Google Colab.
 
 - Thay đổi đường dẫn dataset và chạy toàn bộ các cell.
