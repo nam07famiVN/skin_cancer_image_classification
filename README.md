@@ -1,8 +1,8 @@
 🩺 Skin Cancer Classification using SVM & HOG
 
-Dự án nghiên cứu và xây dựng hệ thống hỗ trợ chẩn đoán ung thư da dựa trên bộ dữ liệu HAM10000. 
+- Dự án nghiên cứu và xây dựng hệ thống hỗ trợ chẩn đoán ung thư da dựa trên bộ dữ liệu HAM10000. 
 
-Hệ thống sử dụng thuật toán Support Vector Machine (SVM) kết hợp với kỹ thuật trích xuất đặc trưng HOG (Histogram of Oriented Gradients) và Thông tin màu sắc.
+- Hệ thống sử dụng thuật toán Support Vector Machine (SVM) kết hợp với kỹ thuật trích xuất đặc trưng HOG (Histogram of Oriented Gradients) và Thông tin màu sắc.
 
 📌 Tổng quan dự án
 
